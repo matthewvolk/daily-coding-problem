@@ -4,27 +4,36 @@
 
 import sys
 
-class BitReversal:
+class BitManipulation:
   bit_sequence = ''
-  reversed_bit_sequence = []
 
   def __init__(self, bit_sequence):
     self.bit_sequence = bit_sequence
   
-  def reverse_bit_sequence(self):
+  def flip_bits_in_sequence(self):
+    flipped_bit_sequence = []
     bit_sequence = list(self.bit_sequence)
     for bit in bit_sequence:
       if bit == '1':
         bit = '0'
-        self.reversed_bit_sequence.append(bit)
+        flipped_bit_sequence.append(bit)
       elif bit == '0':
         bit = '1'
-        self.reversed_bit_sequence.append(bit)
+        flipped_bit_sequence.append(bit)
       else:
-        self.reversed_bit_sequence.append(bit) # if empty space, put back into bit sequence
-    
-    return ''.join(self.reversed_bit_sequence)
+        flipped_bit_sequence.append(bit) # if empty space, put back into bit sequence
+    return ''.join(flipped_bit_sequence)
+
+  def reverse_bit_sequence(self):
+    reversed_sequence = ''
+    for bit in self.bit_sequence:
+      reversed_sequence = bit + reversed_sequence
+    return reversed_sequence
 
 
-bit_sequence_to_reverse = BitReversal(sys.argv[1])
-print(bit_sequence_to_reverse.reverse_bit_sequence())
+bit_sequence_to_reverse = BitManipulation(sys.argv[1])
+print("\nBit Sequenced Flipped:")
+print(bit_sequence_to_reverse.flip_bits_in_sequence() + "\n")
+
+print("Bit Sequenced Reversed:")
+print(bit_sequence_to_reverse.reverse_bit_sequence() + "\n")
