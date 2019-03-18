@@ -24,7 +24,7 @@ class BitManipulation:
         flipped_bit_sequence.append(bit) # if empty space, put back into bit sequence
     return ''.join(flipped_bit_sequence)
 
-  def reverse_bit_sequence(self):
+  def reverse_bits_in_sequence(self):
     reversed_sequence = ''
     for bit in self.bit_sequence:
       reversed_sequence = bit + reversed_sequence
@@ -36,4 +36,4 @@ print("\nBit Sequenced Flipped:")
 print(bit_sequence_to_reverse.flip_bits_in_sequence() + "\n")
 
 print("Bit Sequenced Reversed:")
-print(bit_sequence_to_reverse.reverse_bit_sequence() + "\n")
+print(bit_sequence_to_reverse.reverse_bits_in_sequence() + "\n")
