@@ -10,8 +10,25 @@ class StringPatterns:
     self.st = st
 
   def first_recurring_char(self):
+    prev_chars = []
+
     for i in self.st:
-      print(i)
+      print("========================================================")
+      print(prev_chars)
+      # prev_chars.append(i)
+      print("outer loop i = " + i)
+      for j in prev_chars:
+        # print("i = " + i)
+        # print("j = " + j)
+        # prev_chars.append(i)
+        if i == j:
+          print("inner loop i = " + i + "\ninner loop j = " + j + "\n" + "repeating char detected! \n")
+          break
+        else:
+          print("inner loop i = " + i + "\ninner loop j = " + j + "\n" + "no repeaters \n")
+          break
+    # return i
+
       # id first recurring char in string
       # return char if it is recurring
       # return null if no recurring string
