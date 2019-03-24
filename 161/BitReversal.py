@@ -22,6 +22,7 @@ class BitManipulation:
         flipped_bit_sequence.append(bit)
       else:
         flipped_bit_sequence.append(bit) # if empty space, put back into bit sequence
+        
     return ''.join(flipped_bit_sequence)
 
   def reverse_bits_in_sequence(self):
