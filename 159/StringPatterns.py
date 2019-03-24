@@ -13,25 +13,11 @@ class StringPatterns:
     prev_chars = []
 
     for i in self.st:
-      print("========================================================")
-      print(prev_chars)
-      # prev_chars.append(i)
-      print("outer loop i = " + i)
-      for j in prev_chars:
-        # print("i = " + i)
-        # print("j = " + j)
-        # prev_chars.append(i)
-        if i == j:
-          print("inner loop i = " + i + "\ninner loop j = " + j + "\n" + "repeating char detected! \n")
-          break
-        else:
-          print("inner loop i = " + i + "\ninner loop j = " + j + "\n" + "no repeaters \n")
-          break
-    # return i
-
-      # id first recurring char in string
-      # return char if it is recurring
-      # return null if no recurring string
+      if (i in prev_chars) == True:
+        return i
+      prev_chars.append(i)
+    
+    return None
 
 string_sequence = StringPatterns(sys.argv[1])
 print(string_sequence.first_recurring_char())
